@@ -17,7 +17,7 @@ public  function verifyTransaction($transaction_ref)
 
 $this->verifyCount ++;
 	$data = array('txref' => $transaction_ref,
-	  'SECKEY' => 'FLWSECK_TEST-165ad54de5c9ee01fb0db8e546885a60-X'  //secret key from pay button generated on rave dashboard
+	  'SECKEY' => env('FLWSECRET')  //secret key from pay button generated on rave dashboard
 	);
 	  $inv=Invoice::where('reference', $transaction_ref)->first();
 
